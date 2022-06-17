@@ -1,0 +1,762 @@
+ 
+cpldfit:  version P.20131013                        Xilinx Inc.
+                                  Fitter Report
+Design Name: Traffic                             Date:  5-23-2022, 11:48PM
+Device Used: XC2C64A-7-VQ44
+Fitting Status: Successful
+
+*************************  Mapped Resource Summary  **************************
+
+Macrocells     Product Terms    Function Block   Registers      Pins           
+Used/Tot       Used/Tot         Inps Used/Tot    Used/Tot       Used/Tot       
+43 /64  ( 67%) 125 /224  ( 56%) 76  /160  ( 47%) 32 /64  ( 50%) 14 /33  ( 42%)
+
+** Function Block Resources **
+
+Function Mcells   FB Inps  Pterms   IO       CTC      CTR      CTS      CTE     
+Block    Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot Used/Tot
+FB1      11/16     27/40    56/56*    0/ 8    0/1      0/1      0/1      0/1
+FB2      16/16*    23/40    28/56     4/ 9    0/1      0/1      0/1      0/1
+FB3      16/16*    26/40    41/56     4/ 9    0/1      0/1      0/1      0/1
+FB4       0/16      0/40     0/56     0/ 7    0/1      0/1      0/1      0/1
+         -----    -------  -------   -----    ---      ---      ---      ---
+Total    43/64     76/160  125/224    8/33    0/4      0/4      0/4      0/4 
+
+CTC - Control Term Clock
+CTR - Control Term Reset
+CTS - Control Term Set
+CTE - Control Term Output Enable
+
+* - Resource is exhausted
+
+** Global Control Resources **
+
+GCK         GSR         GTS         DGE         
+Used/Tot    Used/Tot    Used/Tot    Used/Tot    
+1/3         1/1         0/4         0/0
+
+Signal 'Clock' mapped onto global clock net GCK2.
+Signal 'Reset' mapped onto global set/reset net GSR.
+
+** Pin Resources **
+
+Signal Type    Required     Mapped  |  Pin Type            Used    Total 
+------------------------------------|------------------------------------
+Input         :    4           4    |  I/O              :    11     25
+Output        :    8           8    |  GCK/IO           :     1      3
+Bidirectional :    0           0    |  GTS/IO           :     1      4
+GCK           :    1           1    |  GSR/IO           :     1      1
+GTS           :    0           0    |  
+GSR           :    1           1    |  
+                 ----        ----
+        Total     14          14
+
+End of Mapped Resource Summary
+**************************  Errors and Warnings  ***************************
+
+WARNING:Cpld - Unable to retrieve the path to the iSE Project Repository. Will
+   use the default filename of 'Traffic.ise'.
+INFO:Cpld - Inferring BUFG constraint for signal 'Clock' based upon the LOC
+   constraint 'P1'. It is recommended that you declare this BUFG explicitedly in
+   your design. Note that for certain device families the output of a BUFG
+   constraint can not drive a gated clock, and the BUFG constraint will be
+   ignored.
+*************************  Summary of Mapped Logic  ************************
+
+** 8 Outputs **
+
+Signal                    Total Total Bank Loc     Pin   Pin       Pin     I/O      I/O       Slew Reg     Reg Init
+Name                      Pts   Inps               No.   Type      Use     STD      Style     Rate Use     State
+LightsEW<1>               1     2     1    FB2_1   39    I/O       O       LVCMOS33           FAST         
+LightsEW<0>               1     2     1    FB2_2   40    I/O       O       LVCMOS33           FAST         
+LightsNS<1>               1     2     1    FB2_5   41    I/O       O       LVCMOS33           FAST         
+LightsNS<0>               1     2     1    FB2_6   42    I/O       O       LVCMOS33           FAST         
+debugLED                  14    15    2    FB3_1   29    I/O       O       LVCMOS33           FAST         
+LEDs<2>                   1     2     2    FB3_6   23    I/O       O       LVCMOS33           FAST         
+LEDs<1>                   1     2     2    FB3_10  22    I/O       O       LVCMOS33           FAST         
+LEDs<0>                   2     14    2    FB3_11  21    I/O       O       LVCMOS33           FAST DFF     RESET
+
+** 35 Buried Nodes **
+
+Signal                    Total Total Loc     Reg     Reg Init
+Name                      Pts   Inps          Use     State
+state_FSM_FFd4            5     8     FB1_4   DFF     RESET
+state_FSM_FFd6            5     10    FB1_5   DFF/S   SET
+N_PZ_207                  10    14    FB1_6           
+N_PZ_222                  6     14    FB1_7           
+PedestrianHasCrossed      9     24    FB1_8   DFF     RESET
+N_PZ_198                  1     5     FB1_11          
+state_FSM_FFd5            3     6     FB1_12  DFF     RESET
+EWPS                      5     9     FB1_13  DFF     RESET
+state_FSM_FFd1            5     8     FB1_14  DFF     RESET
+state_FSM_FFd3            5     10    FB1_15  DFF     RESET
+state_FSM_FFd2            3     6     FB1_16  DFF     RESET
+PedTimer/Ticks<3>         2     5     FB2_3   DFF     RESET
+PedTimer/Ticks<2>         2     4     FB2_4   DFF     RESET
+PedTimer/Ticks<8>         2     6     FB2_7   TFF     RESET
+PedTimer/Ticks<7>         2     5     FB2_8   TFF     RESET
+PedTimer/Ticks<1>         2     3     FB2_9   DFF     RESET
+PedTimer/Ticks<6>         2     4     FB2_10  TFF     RESET
+PedTimer/Ticks<0>         1     2     FB2_11  DFF     RESET
+PedTimer/Ticks<5>         2     3     FB2_12  DFF     RESET
+PedTimer/Ticks<4>         2     7     FB2_13  DFF     RESET
+PedTimer/state_FSM_FFd2   1     1     FB2_14  DFF     RESET
+N_PZ_188                  1     2     FB2_15          
+NSPS                      5     9     FB2_16  DFF     RESET
+MainTimer/Ticks<0>        1     2     FB3_2   DFF     RESET
+MainTimer/Ticks<1>        2     3     FB3_3   DFF     RESET
+MainTimer/Ticks<5>        2     7     FB3_4   TFF     RESET
+MainTimer/Ticks<6>        2     8     FB3_5   TFF     RESET
+MainTimer/Ticks<7>        2     9     FB3_7   TFF     RESET
+MainTimer/Ticks<8>        2     10    FB3_8   TFF     RESET
+MainTimer/Ticks<9>        2     11    FB3_9   TFF     RESET
+MainTimer/Ticks<2>        2     4     FB3_12  TFF     RESET
+MainTimer/state_FSM_FFd3  3     13    FB3_13  DFF     RESET
+MainTimer/Ticks<3>        2     5     FB3_14  TFF     RESET
+MainTimer/Ticks<4>        2     6     FB3_15  TFF     RESET
+MainTimer/state_FSM_FFd2  3     14    FB3_16  DFF     RESET
+
+** 6 Inputs **
+
+Signal                    Bank Loc     Pin   Pin       Pin     I/O      I/O
+Name                                   No.   Type      Use     STD      Style
+PedNS                     2    FB1_1   38    I/O       I       LVCMOS33 KPR
+PedEW                     2    FB1_2   37    I/O       I       LVCMOS33 KPR
+CarNS                     2    FB1_3   36    I/O       I       LVCMOS33 KPR
+CarEW                     2    FB1_9   34    GTS/I/O   I       LVCMOS33 KPR
+Reset                     2    FB1_13  30    GSR/I/O   GSR/I   LVCMOS33 KPR
+Clock                     1    FB2_10  1     GCK/I/O   GCK     LVCMOS33 KPR
+
+Legend:
+Pin No.   - ~     - User Assigned
+I/O Style - OD    - OpenDrain
+          - PU    - Pullup
+          - KPR   - Keeper
+          - S     - SchmittTrigger
+          - DG    - DataGate
+Reg Use   - LATCH - Transparent latch
+          - DFF   - D-flip-flop
+          - DEFF  - D-flip-flop with clock enable
+          - TFF   - T-flip-flop
+          - TDFF  - Dual-edge-triggered T-flip-flop
+          - DDFF  - Dual-edge-triggered flip-flop
+          - DDEFF - Dual-edge-triggered flip-flop with clock enable
+          /S (after any above flop/latch type) indicates initial state is Set
+**************************  Function Block Details  ************************
+Legend:
+Total Pt     - Total product terms used by the macrocell signal
+Loc          - Location where logic was mapped in device
+Pin Type/Use - I  - Input             GCK - Global clock
+               O  - Output            GTS - Global Output Enable
+              (b) - Buried macrocell  GSR - Global Set/Reset
+              VRF - Vref
+Pin No.      - ~  - User Assigned
+*********************************** FB1  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               27/13
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   56/0
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB1_1   38   I/O     I     
+(unused)                      0     FB1_2   37   I/O     I     
+(unused)                      0     FB1_3   36   I/O     I     
+state_FSM_FFd4                5     FB1_4        (b)     (b)               
+state_FSM_FFd6                5     FB1_5        (b)     (b)               
+N_PZ_207                      10    FB1_6        (b)     (b)               
+N_PZ_222                      6     FB1_7        (b)     (b)               
+PedestrianHasCrossed          9     FB1_8        (b)     (b)               
+(unused)                      0     FB1_9   34   GTS/I/O I     
+(unused)                      0     FB1_10  33   GTS/I/O       
+N_PZ_198                      1     FB1_11  32   GTS/I/O (b)               
+state_FSM_FFd5                3     FB1_12  31   GTS/I/O (b)               
+EWPS                          5     FB1_13  30   GSR/I/O GSR/I             
+state_FSM_FFd1                5     FB1_14       (b)     (b)               
+state_FSM_FFd3                5     FB1_15       (b)     (b)               
+state_FSM_FFd2                3     FB1_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: CarEW                     10: PedTimer/Ticks<0>  19: PedTimer/state_FSM_FFd2 
+  2: CarNS                     11: PedTimer/Ticks<1>  20: PedestrianHasCrossed 
+  3: EWPS                      12: PedTimer/Ticks<2>  21: Reset 
+  4: LEDs<0>                   13: PedTimer/Ticks<3>  22: state_FSM_FFd1 
+  5: MainTimer/state_FSM_FFd2  14: PedTimer/Ticks<4>  23: state_FSM_FFd2 
+  6: MainTimer/state_FSM_FFd3  15: PedTimer/Ticks<5>  24: state_FSM_FFd3 
+  7: NSPS                      16: PedTimer/Ticks<6>  25: state_FSM_FFd4 
+  8: N_PZ_188                  17: PedTimer/Ticks<7>  26: state_FSM_FFd5 
+  9: PedEW                     18: PedTimer/Ticks<8>  27: state_FSM_FFd6 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+state_FSM_FFd4    .XXXXXX.................X.X............. 8       
+state_FSM_FFd6    .XXXXXX............X.X...XX............. 10      
+N_PZ_207          XXXX..XX...........XXXXXXXX............. 14      
+N_PZ_222          XXXX..XX...........XXXXXXXX............. 14      
+PedestrianHasCrossed 
+                  XXXX..XX.XXXXXXXXXXXXXXXXXX............. 24      
+N_PZ_198          .........XXXXX.......................... 5       
+state_FSM_FFd5    ..X.XX.............X.....XX............. 6       
+EWPS              ..X....XX..........XXXX.XX.............. 9       
+state_FSM_FFd1    X.XXXXX..............X.X................ 8       
+state_FSM_FFd3    X.XXXXX............X..XXX............... 10      
+state_FSM_FFd2    ....XXX............X..XX................ 6       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB2  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               23/17
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   28/28
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+LightsEW<1>                   1     FB2_1   39   I/O     O                 
+LightsEW<0>                   1     FB2_2   40   I/O     O                 
+PedTimer/Ticks<3>             2     FB2_3        (b)     (b)               
+PedTimer/Ticks<2>             2     FB2_4        (b)     (b)               
+LightsNS<1>                   1     FB2_5   41   I/O     O                 
+LightsNS<0>                   1     FB2_6   42   I/O     O                 
+PedTimer/Ticks<8>             2     FB2_7   43   GCK/I/O (b)               
+PedTimer/Ticks<7>             2     FB2_8   44   GCK/I/O (b)               
+PedTimer/Ticks<1>             2     FB2_9        (b)     (b)               
+PedTimer/Ticks<6>             2     FB2_10  1    GCK/I/O GCK               
+PedTimer/Ticks<0>             1     FB2_11       (b)     (b)               
+PedTimer/Ticks<5>             2     FB2_12  2    I/O     (b)               
+PedTimer/Ticks<4>             2     FB2_13  3    I/O     (b)               
+PedTimer/state_FSM_FFd2       1     FB2_14       (b)     (b)               
+N_PZ_188                      1     FB2_15       (b)     (b)               
+NSPS                          5     FB2_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: NSPS                9: PedTimer/Ticks<2>     17: Reset 
+  2: N_PZ_188           10: PedTimer/Ticks<3>     18: state_FSM_FFd1 
+  3: N_PZ_198           11: PedTimer/Ticks<4>     19: state_FSM_FFd2 
+  4: N_PZ_207           12: PedTimer/Ticks<5>     20: state_FSM_FFd3 
+  5: N_PZ_222           13: PedTimer/Ticks<6>     21: state_FSM_FFd4 
+  6: PedNS              14: PedTimer/Ticks<7>     22: state_FSM_FFd5 
+  7: PedTimer/Ticks<0>  15: PedTimer/Ticks<8>     23: state_FSM_FFd6 
+  8: PedTimer/Ticks<1>  16: PedestrianHasCrossed 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+LightsEW<1>       .....................XX................. 2       
+LightsEW<0>       ....................XX.................. 2       
+PedTimer/Ticks<3> 
+                  ...X..XXXX.............................. 5       
+PedTimer/Ticks<2> 
+                  ...X..XXX............................... 4       
+LightsNS<1>       ..................XX.................... 2       
+LightsNS<0>       .................XX..................... 2       
+PedTimer/Ticks<8> 
+                  ..XX.......XXXX......................... 6       
+PedTimer/Ticks<7> 
+                  ..XX.......XXX.......................... 5       
+PedTimer/Ticks<1> 
+                  ....X.XX................................ 3       
+PedTimer/Ticks<6> 
+                  ..XX.......XX........................... 4       
+PedTimer/Ticks<0> 
+                  ....X.X................................. 2       
+PedTimer/Ticks<5> 
+                  ..XX.......X............................ 3       
+PedTimer/Ticks<4> 
+                  ..XX..XXXXX............................. 7       
+PedTimer/state_FSM_FFd2 
+                  ....X................................... 1       
+N_PZ_188          ...................X..X................. 2       
+NSPS              XX...X.........XXXX.XX.................. 9       
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB3  ***********************************
+This function block is part of I/O Bank number:               2
+Number of function block inputs used/remaining:               26/14
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   41/15
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+debugLED                      14    FB3_1   29   I/O     O                 
+MainTimer/Ticks<0>            1     FB3_2   28   I/O     (b)               
+MainTimer/Ticks<1>            2     FB3_3   27   I/O     (b)               
+MainTimer/Ticks<5>            2     FB3_4        (b)     (b)               
+MainTimer/Ticks<6>            2     FB3_5        (b)     (b)               
+LEDs<2>                       1     FB3_6   23   I/O     O                 
+MainTimer/Ticks<7>            2     FB3_7        (b)     (b)               
+MainTimer/Ticks<8>            2     FB3_8        (b)     (b)               
+MainTimer/Ticks<9>            2     FB3_9        (b)     (b)               
+LEDs<1>                       1     FB3_10  22   I/O     O                 
+LEDs<0>                       2     FB3_11  21   I/O     O                 
+MainTimer/Ticks<2>            2     FB3_12  20   I/O     (b)               
+MainTimer/state_FSM_FFd3      3     FB3_13       (b)     (b)               
+MainTimer/Ticks<3>            2     FB3_14  19   I/O     (b)               
+MainTimer/Ticks<4>            2     FB3_15  18   I/O     (b)               
+MainTimer/state_FSM_FFd2      3     FB3_16       (b)     (b)               
+
+Signals Used by Logic in Function Block
+  1: CarEW               10: MainTimer/Ticks<5>        19: Reset 
+  2: CarNS               11: MainTimer/Ticks<6>        20: debugLED 
+  3: EWPS                12: MainTimer/Ticks<7>        21: state_FSM_FFd1 
+  4: LEDs<0>             13: MainTimer/Ticks<8>        22: state_FSM_FFd2 
+  5: MainTimer/Ticks<0>  14: MainTimer/Ticks<9>        23: state_FSM_FFd3 
+  6: MainTimer/Ticks<1>  15: MainTimer/state_FSM_FFd2  24: state_FSM_FFd4 
+  7: MainTimer/Ticks<2>  16: MainTimer/state_FSM_FFd3  25: state_FSM_FFd5 
+  8: MainTimer/Ticks<3>  17: NSPS                      26: state_FSM_FFd6 
+  9: MainTimer/Ticks<4>  18: N_PZ_188                 
+
+Signal                     1         2         3         4 FB      
+Name             0----+----0----+----0----+----0----+----0 Inputs  
+debugLED          XXXX..........XXXXX.XXXXXX.............. 15      
+MainTimer/Ticks<0> 
+                  ....X..............X.................... 2       
+MainTimer/Ticks<1> 
+                  ....XX.............X.................... 3       
+MainTimer/Ticks<5> 
+                  ....XXXXXX.........X.................... 7       
+MainTimer/Ticks<6> 
+                  ....XXXXXXX........X.................... 8       
+LEDs<2>           ..............XX........................ 2       
+MainTimer/Ticks<7> 
+                  ....XXXXXXXX.......X.................... 9       
+MainTimer/Ticks<8> 
+                  ....XXXXXXXXX......X.................... 10      
+MainTimer/Ticks<9> 
+                  ....XXXXXXXXXX.....X.................... 11      
+LEDs<1>           ..............XX........................ 2       
+LEDs<0>           ...XXXXXXXXXXXXX...X.................... 14      
+MainTimer/Ticks<2> 
+                  ....XXX............X.................... 4       
+MainTimer/state_FSM_FFd3 
+                  ....XXXXXXXXXXXX...X.................... 13      
+MainTimer/Ticks<3> 
+                  ....XXXX...........X.................... 5       
+MainTimer/Ticks<4> 
+                  ....XXXXX..........X.................... 6       
+MainTimer/state_FSM_FFd2 
+                  ...XXXXXXXXXXXXX...X.................... 14      
+                 0----+----1----+----2----+----3----+----4
+                           0         0         0         0
+*********************************** FB4  ***********************************
+This function block is part of I/O Bank number:               1
+Number of function block inputs used/remaining:               0/40
+Number of function block control terms used/remaining:        0/4
+Number of PLA product terms used/remaining:                   0/56
+Signal                        Total Loc     Pin  Pin     Pin   CTC CTR CTS CTE
+Name                          Pt            No.  Type    Use   
+(unused)                      0     FB4_1   5    I/O           
+(unused)                      0     FB4_2   6    I/O           
+(unused)                      0     FB4_3        (b)           
+(unused)                      0     FB4_4        (b)           
+(unused)                      0     FB4_5        (b)           
+(unused)                      0     FB4_6        (b)           
+(unused)                      0     FB4_7   8    I/O           
+(unused)                      0     FB4_8        (b)           
+(unused)                      0     FB4_9        (b)           
+(unused)                      0     FB4_10       (b)           
+(unused)                      0     FB4_11  12   I/O           
+(unused)                      0     FB4_12       (b)           
+(unused)                      0     FB4_13  13   I/O           
+(unused)                      0     FB4_14  14   I/O           
+(unused)                      0     FB4_15  16   I/O           
+(unused)                      0     FB4_16       (b)           
+*******************************  Equations  ********************************
+
+********** Mapped Logic **********
+
+FDCPE_EWPS: FDCPE port map (EWPS,EWPS_D,Clock,'0','0','1');
+EWPS_D <= NOT Reset
+	XOR ((NOT Reset AND PedestrianHasCrossed AND state_FSM_FFd5)
+	OR (NOT Reset AND NOT EWPS AND NOT PedEW)
+	OR (Reset AND NOT state_FSM_FFd2 AND NOT state_FSM_FFd5 AND PedEW AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND N_PZ_188)
+	OR (Reset AND NOT state_FSM_FFd2 AND NOT state_FSM_FFd5 AND EWPS AND 
+	NOT PedEW AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND N_PZ_188));
+
+FDCPE_LEDs0: FDCPE port map (LEDs(0),LEDs_D(0),Clock,'0','0','1');
+LEDs_D(0) <= ((LEDs(0) AND NOT debugLED)
+	OR (MainTimer/state_FSM_FFd2 AND NOT debugLED AND 
+	NOT MainTimer/Ticks(0) AND NOT MainTimer/Ticks(1) AND NOT MainTimer/Ticks(2) AND 
+	MainTimer/Ticks(3) AND NOT MainTimer/Ticks(4) AND MainTimer/Ticks(5) AND 
+	MainTimer/Ticks(6) AND MainTimer/Ticks(7) AND MainTimer/Ticks(8) AND 
+	NOT MainTimer/state_FSM_FFd3 AND MainTimer/Ticks(9)));
+
+
+LEDs(1) <= NOT ((MainTimer/state_FSM_FFd2 AND 
+	NOT MainTimer/state_FSM_FFd3));
+
+
+LEDs(2) <= (MainTimer/state_FSM_FFd2 AND 
+	MainTimer/state_FSM_FFd3);
+
+
+LightsEW(0) <= NOT ((NOT state_FSM_FFd5 AND NOT state_FSM_FFd4));
+
+
+LightsEW(1) <= NOT ((NOT state_FSM_FFd5 AND NOT state_FSM_FFd6));
+
+
+LightsNS(0) <= NOT ((NOT state_FSM_FFd2 AND NOT state_FSM_FFd1));
+
+
+LightsNS(1) <= NOT ((NOT state_FSM_FFd2 AND NOT state_FSM_FFd3));
+
+FDCPE_MainTimer/Ticks0: FDCPE port map (MainTimer/Ticks(0),MainTimer/Ticks_D(0),Clock,'0','0','1');
+MainTimer/Ticks_D(0) <= (NOT debugLED AND NOT MainTimer/Ticks(0));
+
+FDCPE_MainTimer/Ticks1: FDCPE port map (MainTimer/Ticks(1),MainTimer/Ticks_D(1),Clock,'0','0','1');
+MainTimer/Ticks_D(1) <= ((NOT debugLED AND MainTimer/Ticks(0) AND 
+	NOT MainTimer/Ticks(1))
+	OR (NOT debugLED AND NOT MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1)));
+
+FTCPE_MainTimer/Ticks2: FTCPE port map (MainTimer/Ticks(2),MainTimer/Ticks_T(2),Clock,'0','0','1');
+MainTimer/Ticks_T(2) <= ((debugLED AND MainTimer/Ticks(2))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1)));
+
+FTCPE_MainTimer/Ticks3: FTCPE port map (MainTimer/Ticks(3),MainTimer/Ticks_T(3),Clock,'0','0','1');
+MainTimer/Ticks_T(3) <= ((debugLED AND MainTimer/Ticks(3))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2)));
+
+FTCPE_MainTimer/Ticks4: FTCPE port map (MainTimer/Ticks(4),MainTimer/Ticks_T(4),Clock,'0','0','1');
+MainTimer/Ticks_T(4) <= ((debugLED AND MainTimer/Ticks(4))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3)));
+
+FTCPE_MainTimer/Ticks5: FTCPE port map (MainTimer/Ticks(5),MainTimer/Ticks_T(5),Clock,'0','0','1');
+MainTimer/Ticks_T(5) <= ((debugLED AND MainTimer/Ticks(5))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3) AND 
+	MainTimer/Ticks(4)));
+
+FTCPE_MainTimer/Ticks6: FTCPE port map (MainTimer/Ticks(6),MainTimer/Ticks_T(6),Clock,'0','0','1');
+MainTimer/Ticks_T(6) <= ((debugLED AND MainTimer/Ticks(6))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3) AND 
+	MainTimer/Ticks(4) AND MainTimer/Ticks(5)));
+
+FTCPE_MainTimer/Ticks7: FTCPE port map (MainTimer/Ticks(7),MainTimer/Ticks_T(7),Clock,'0','0','1');
+MainTimer/Ticks_T(7) <= ((debugLED AND MainTimer/Ticks(7))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3) AND 
+	MainTimer/Ticks(4) AND MainTimer/Ticks(5) AND MainTimer/Ticks(6)));
+
+FTCPE_MainTimer/Ticks8: FTCPE port map (MainTimer/Ticks(8),MainTimer/Ticks_T(8),Clock,'0','0','1');
+MainTimer/Ticks_T(8) <= ((debugLED AND MainTimer/Ticks(8))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3) AND 
+	MainTimer/Ticks(4) AND MainTimer/Ticks(5) AND MainTimer/Ticks(6) AND 
+	MainTimer/Ticks(7)));
+
+FTCPE_MainTimer/Ticks9: FTCPE port map (MainTimer/Ticks(9),MainTimer/Ticks_T(9),Clock,'0','0','1');
+MainTimer/Ticks_T(9) <= ((debugLED AND MainTimer/Ticks(9))
+	OR (NOT debugLED AND MainTimer/Ticks(0) AND 
+	MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3) AND 
+	MainTimer/Ticks(4) AND MainTimer/Ticks(5) AND MainTimer/Ticks(6) AND 
+	MainTimer/Ticks(7) AND MainTimer/Ticks(8)));
+
+FDCPE_MainTimer/state_FSM_FFd2: FDCPE port map (MainTimer/state_FSM_FFd2,MainTimer/state_FSM_FFd2_D,Clock,'0','0','1');
+MainTimer/state_FSM_FFd2_D <= ((LEDs(0) AND NOT debugLED)
+	OR (MainTimer/state_FSM_FFd2 AND NOT debugLED)
+	OR (NOT debugLED AND NOT MainTimer/Ticks(0) AND 
+	NOT MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND MainTimer/Ticks(3) AND 
+	NOT MainTimer/Ticks(4) AND MainTimer/Ticks(5) AND NOT MainTimer/Ticks(6) AND 
+	NOT MainTimer/Ticks(7) AND MainTimer/Ticks(8) AND MainTimer/state_FSM_FFd3 AND 
+	NOT MainTimer/Ticks(9)));
+
+FDCPE_MainTimer/state_FSM_FFd3: FDCPE port map (MainTimer/state_FSM_FFd3,MainTimer/state_FSM_FFd3_D,Clock,'0','0','1');
+MainTimer/state_FSM_FFd3_D <= NOT (((debugLED)
+	OR (MainTimer/state_FSM_FFd2 AND 
+	NOT MainTimer/state_FSM_FFd3)
+	OR (MainTimer/state_FSM_FFd2 AND NOT MainTimer/Ticks(0) AND 
+	NOT MainTimer/Ticks(1) AND MainTimer/Ticks(2) AND NOT MainTimer/Ticks(3) AND 
+	MainTimer/Ticks(4) AND MainTimer/Ticks(5) AND MainTimer/Ticks(6) AND 
+	MainTimer/Ticks(7) AND MainTimer/Ticks(8) AND NOT MainTimer/Ticks(9))));
+
+FDCPE_NSPS: FDCPE port map (NSPS,NSPS_D,Clock,'0','0','1');
+NSPS_D <= NOT Reset
+	XOR ((NOT Reset AND state_FSM_FFd2 AND PedestrianHasCrossed)
+	OR (NOT Reset AND NOT NSPS AND NOT PedNS)
+	OR (Reset AND NOT state_FSM_FFd2 AND PedNS AND NOT state_FSM_FFd5 AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND N_PZ_188)
+	OR (Reset AND NOT state_FSM_FFd2 AND NSPS AND NOT PedNS AND 
+	NOT state_FSM_FFd5 AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND N_PZ_188));
+
+
+N_PZ_188 <= (NOT state_FSM_FFd3 AND NOT state_FSM_FFd6);
+
+
+N_PZ_198 <= (PedTimer/Ticks(0) AND PedTimer/Ticks(1) AND 
+	PedTimer/Ticks(2) AND PedTimer/Ticks(3) AND PedTimer/Ticks(4));
+
+
+N_PZ_207 <= ((state_FSM_FFd1)
+	OR (state_FSM_FFd4)
+	OR (NOT LEDs(0) AND NOT N_PZ_188)
+	OR (Reset AND NOT N_PZ_188)
+	OR (CarNS AND state_FSM_FFd6)
+	OR (CarEW AND state_FSM_FFd3)
+	OR (NSPS AND NOT N_PZ_188)
+	OR (EWPS AND NOT N_PZ_188)
+	OR (Reset AND state_FSM_FFd2 AND NOT PedestrianHasCrossed)
+	OR (Reset AND NOT PedestrianHasCrossed AND state_FSM_FFd5));
+
+
+N_PZ_222 <= ((NOT Reset AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND 
+	N_PZ_188)
+	OR (PedestrianHasCrossed AND NOT state_FSM_FFd1 AND 
+	NOT state_FSM_FFd4 AND N_PZ_188)
+	OR (NOT state_FSM_FFd2 AND NOT state_FSM_FFd5 AND NOT state_FSM_FFd1 AND 
+	NOT state_FSM_FFd4 AND N_PZ_188)
+	OR (LEDs(0) AND NOT Reset AND NOT CarNS AND NOT CarEW AND NOT NSPS AND NOT EWPS AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd4)
+	OR (LEDs(0) AND NOT Reset AND NOT CarNS AND NOT NSPS AND NOT EWPS AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd3 AND NOT state_FSM_FFd4)
+	OR (LEDs(0) AND NOT Reset AND NOT CarEW AND NOT NSPS AND NOT EWPS AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND NOT state_FSM_FFd6));
+
+FDCPE_PedTimer/Ticks0: FDCPE port map (PedTimer/Ticks(0),PedTimer/Ticks_D(0),Clock,'0','0','1');
+PedTimer/Ticks_D(0) <= (NOT PedTimer/Ticks(0) AND N_PZ_222);
+
+FDCPE_PedTimer/Ticks1: FDCPE port map (PedTimer/Ticks(1),PedTimer/Ticks_D(1),Clock,'0','0','1');
+PedTimer/Ticks_D(1) <= ((PedTimer/Ticks(0) AND N_PZ_222 AND NOT PedTimer/Ticks(1))
+	OR (NOT PedTimer/Ticks(0) AND N_PZ_222 AND PedTimer/Ticks(1)));
+
+FDCPE_PedTimer/Ticks2: FDCPE port map (PedTimer/Ticks(2),PedTimer/Ticks_D(2),Clock,'0','0','1');
+PedTimer/Ticks_D(2) <= (PedTimer/Ticks(2) AND NOT N_PZ_207)
+	XOR (PedTimer/Ticks(0) AND PedTimer/Ticks(1) AND NOT N_PZ_207);
+
+FDCPE_PedTimer/Ticks3: FDCPE port map (PedTimer/Ticks(3),PedTimer/Ticks_D(3),Clock,'0','0','1');
+PedTimer/Ticks_D(3) <= (NOT N_PZ_207 AND PedTimer/Ticks(3))
+	XOR (PedTimer/Ticks(0) AND PedTimer/Ticks(1) AND 
+	PedTimer/Ticks(2) AND NOT N_PZ_207);
+
+FDCPE_PedTimer/Ticks4: FDCPE port map (PedTimer/Ticks(4),PedTimer/Ticks_D(4),Clock,'0','0','1');
+PedTimer/Ticks_D(4) <= ((NOT N_PZ_207 AND PedTimer/Ticks(4) AND NOT N_PZ_198)
+	OR (PedTimer/Ticks(0) AND PedTimer/Ticks(1) AND 
+	PedTimer/Ticks(2) AND NOT N_PZ_207 AND PedTimer/Ticks(3) AND NOT N_PZ_198));
+
+FDCPE_PedTimer/Ticks5: FDCPE port map (PedTimer/Ticks(5),PedTimer/Ticks_D(5),Clock,'0','0','1');
+PedTimer/Ticks_D(5) <= ((NOT N_PZ_207 AND N_PZ_198 AND NOT PedTimer/Ticks(5))
+	OR (NOT N_PZ_207 AND NOT N_PZ_198 AND PedTimer/Ticks(5)));
+
+FTCPE_PedTimer/Ticks6: FTCPE port map (PedTimer/Ticks(6),PedTimer/Ticks_T(6),Clock,'0','0','1');
+PedTimer/Ticks_T(6) <= ((N_PZ_207 AND PedTimer/Ticks(6))
+	OR (NOT N_PZ_207 AND N_PZ_198 AND PedTimer/Ticks(5)));
+
+FTCPE_PedTimer/Ticks7: FTCPE port map (PedTimer/Ticks(7),PedTimer/Ticks_T(7),Clock,'0','0','1');
+PedTimer/Ticks_T(7) <= ((N_PZ_207 AND PedTimer/Ticks(7))
+	OR (NOT N_PZ_207 AND N_PZ_198 AND PedTimer/Ticks(5) AND 
+	PedTimer/Ticks(6)));
+
+FTCPE_PedTimer/Ticks8: FTCPE port map (PedTimer/Ticks(8),PedTimer/Ticks_T(8),Clock,'0','0','1');
+PedTimer/Ticks_T(8) <= ((N_PZ_207 AND PedTimer/Ticks(8))
+	OR (NOT N_PZ_207 AND N_PZ_198 AND PedTimer/Ticks(5) AND 
+	PedTimer/Ticks(6) AND PedTimer/Ticks(7)));
+
+FDCPE_PedTimer/state_FSM_FFd2: FDCPE port map (PedTimer/state_FSM_FFd2,N_PZ_222,Clock,'0','0','1');
+
+FDCPE_PedestrianHasCrossed: FDCPE port map (PedestrianHasCrossed,PedestrianHasCrossed_D,Clock,'0','0','1');
+PedestrianHasCrossed_D <= ((PedestrianHasCrossed AND NOT state_FSM_FFd1 AND 
+	NOT state_FSM_FFd4 AND N_PZ_188)
+	OR (LEDs(0) AND NOT Reset AND PedestrianHasCrossed AND NOT CarNS AND 
+	NOT CarEW AND NOT NSPS AND NOT EWPS AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd4)
+	OR (LEDs(0) AND NOT Reset AND PedestrianHasCrossed AND NOT CarNS AND 
+	NOT NSPS AND NOT EWPS AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd3 AND 
+	NOT state_FSM_FFd4)
+	OR (LEDs(0) AND NOT Reset AND PedestrianHasCrossed AND NOT CarEW AND 
+	NOT NSPS AND NOT EWPS AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND 
+	NOT state_FSM_FFd6)
+	OR (NOT Reset AND NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND 
+	N_PZ_188 AND NOT PedTimer/Ticks(0) AND NOT PedTimer/Ticks(1) AND 
+	PedTimer/Ticks(2) AND NOT PedTimer/Ticks(3) AND PedTimer/Ticks(4) AND 
+	PedTimer/Ticks(5) AND PedTimer/Ticks(6) AND PedTimer/Ticks(7) AND 
+	PedTimer/Ticks(8) AND PedTimer/state_FSM_FFd2)
+	OR (NOT state_FSM_FFd2 AND NOT state_FSM_FFd5 AND NOT state_FSM_FFd1 AND 
+	NOT state_FSM_FFd4 AND N_PZ_188 AND NOT PedTimer/Ticks(0) AND NOT PedTimer/Ticks(1) AND 
+	PedTimer/Ticks(2) AND NOT PedTimer/Ticks(3) AND PedTimer/Ticks(4) AND 
+	PedTimer/Ticks(5) AND PedTimer/Ticks(6) AND PedTimer/Ticks(7) AND 
+	PedTimer/Ticks(8) AND PedTimer/state_FSM_FFd2)
+	OR (LEDs(0) AND NOT Reset AND NOT CarNS AND NOT CarEW AND NOT NSPS AND NOT EWPS AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND NOT PedTimer/Ticks(0) AND 
+	NOT PedTimer/Ticks(1) AND PedTimer/Ticks(2) AND NOT PedTimer/Ticks(3) AND 
+	PedTimer/Ticks(4) AND PedTimer/Ticks(5) AND PedTimer/Ticks(6) AND 
+	PedTimer/Ticks(7) AND PedTimer/Ticks(8) AND PedTimer/state_FSM_FFd2)
+	OR (LEDs(0) AND NOT Reset AND NOT CarNS AND NOT NSPS AND NOT EWPS AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd3 AND NOT state_FSM_FFd4 AND 
+	NOT PedTimer/Ticks(0) AND NOT PedTimer/Ticks(1) AND PedTimer/Ticks(2) AND 
+	NOT PedTimer/Ticks(3) AND PedTimer/Ticks(4) AND PedTimer/Ticks(5) AND 
+	PedTimer/Ticks(6) AND PedTimer/Ticks(7) AND PedTimer/Ticks(8) AND 
+	PedTimer/state_FSM_FFd2)
+	OR (LEDs(0) AND NOT Reset AND NOT CarEW AND NOT NSPS AND NOT EWPS AND 
+	NOT state_FSM_FFd1 AND NOT state_FSM_FFd4 AND NOT state_FSM_FFd6 AND 
+	NOT PedTimer/Ticks(0) AND NOT PedTimer/Ticks(1) AND PedTimer/Ticks(2) AND 
+	NOT PedTimer/Ticks(3) AND PedTimer/Ticks(4) AND PedTimer/Ticks(5) AND 
+	PedTimer/Ticks(6) AND PedTimer/Ticks(7) AND PedTimer/Ticks(8) AND 
+	PedTimer/state_FSM_FFd2));
+
+
+debugLED <= ((Reset AND state_FSM_FFd2)
+	OR (Reset AND state_FSM_FFd5)
+	OR (Reset AND NOT N_PZ_188)
+	OR (LEDs(0) AND CarNS AND state_FSM_FFd6)
+	OR (LEDs(0) AND CarEW AND state_FSM_FFd3)
+	OR (LEDs(0) AND NSPS AND state_FSM_FFd6)
+	OR (LEDs(0) AND EWPS AND state_FSM_FFd3)
+	OR (Reset AND state_FSM_FFd1 AND 
+	NOT MainTimer/state_FSM_FFd2)
+	OR (Reset AND state_FSM_FFd1 AND 
+	NOT MainTimer/state_FSM_FFd3)
+	OR (Reset AND state_FSM_FFd4 AND 
+	NOT MainTimer/state_FSM_FFd2)
+	OR (Reset AND state_FSM_FFd4 AND 
+	NOT MainTimer/state_FSM_FFd3)
+	OR (state_FSM_FFd1 AND MainTimer/state_FSM_FFd2 AND 
+	MainTimer/state_FSM_FFd3)
+	OR (LEDs(0) AND NSPS AND state_FSM_FFd3 AND 
+	MainTimer/state_FSM_FFd2 AND NOT MainTimer/state_FSM_FFd3)
+	OR (LEDs(0) AND EWPS AND state_FSM_FFd6 AND 
+	MainTimer/state_FSM_FFd2 AND NOT MainTimer/state_FSM_FFd3));
+
+FDCPE_state_FSM_FFd1: FDCPE port map (state_FSM_FFd1,state_FSM_FFd1_D,Clock,Reset,'0','1');
+state_FSM_FFd1_D <= ((state_FSM_FFd1 AND NOT MainTimer/state_FSM_FFd2)
+	OR (state_FSM_FFd1 AND NOT MainTimer/state_FSM_FFd3)
+	OR (LEDs(0) AND CarEW AND NOT NSPS AND state_FSM_FFd3)
+	OR (LEDs(0) AND NOT NSPS AND EWPS AND state_FSM_FFd3)
+	OR (LEDs(0) AND NSPS AND state_FSM_FFd3 AND 
+	MainTimer/state_FSM_FFd2 AND NOT MainTimer/state_FSM_FFd3));
+
+FDCPE_state_FSM_FFd2: FDCPE port map (state_FSM_FFd2,state_FSM_FFd2_D,Clock,Reset,'0','1');
+state_FSM_FFd2_D <= ((state_FSM_FFd2 AND NOT PedestrianHasCrossed)
+	OR (NSPS AND state_FSM_FFd3 AND NOT MainTimer/state_FSM_FFd2)
+	OR (NSPS AND state_FSM_FFd3 AND MainTimer/state_FSM_FFd3));
+
+FDCPE_state_FSM_FFd3: FDCPE port map (state_FSM_FFd3,state_FSM_FFd3_D,Clock,Reset,'0','1');
+state_FSM_FFd3_D <= ((state_FSM_FFd2 AND PedestrianHasCrossed)
+	OR (NOT LEDs(0) AND NOT NSPS AND state_FSM_FFd3)
+	OR (state_FSM_FFd4 AND MainTimer/state_FSM_FFd2 AND 
+	MainTimer/state_FSM_FFd3)
+	OR (NOT LEDs(0) AND state_FSM_FFd3 AND 
+	MainTimer/state_FSM_FFd2 AND NOT MainTimer/state_FSM_FFd3)
+	OR (NOT CarEW AND NOT NSPS AND NOT EWPS AND state_FSM_FFd3));
+
+FDCPE_state_FSM_FFd4: FDCPE port map (state_FSM_FFd4,state_FSM_FFd4_D,Clock,Reset,'0','1');
+state_FSM_FFd4_D <= ((state_FSM_FFd4 AND NOT MainTimer/state_FSM_FFd2)
+	OR (state_FSM_FFd4 AND NOT MainTimer/state_FSM_FFd3)
+	OR (LEDs(0) AND CarNS AND NOT EWPS AND state_FSM_FFd6)
+	OR (LEDs(0) AND NSPS AND NOT EWPS AND state_FSM_FFd6)
+	OR (LEDs(0) AND EWPS AND state_FSM_FFd6 AND 
+	MainTimer/state_FSM_FFd2 AND NOT MainTimer/state_FSM_FFd3));
+
+FDCPE_state_FSM_FFd5: FDCPE port map (state_FSM_FFd5,state_FSM_FFd5_D,Clock,Reset,'0','1');
+state_FSM_FFd5_D <= ((NOT PedestrianHasCrossed AND state_FSM_FFd5)
+	OR (EWPS AND state_FSM_FFd6 AND NOT MainTimer/state_FSM_FFd2)
+	OR (EWPS AND state_FSM_FFd6 AND MainTimer/state_FSM_FFd3));
+
+FDCPE_state_FSM_FFd6: FDCPE port map (state_FSM_FFd6,state_FSM_FFd6_D,Clock,'0',Reset,'1');
+state_FSM_FFd6_D <= ((PedestrianHasCrossed AND state_FSM_FFd5)
+	OR (NOT LEDs(0) AND NOT EWPS AND state_FSM_FFd6)
+	OR (state_FSM_FFd1 AND MainTimer/state_FSM_FFd2 AND 
+	MainTimer/state_FSM_FFd3)
+	OR (NOT LEDs(0) AND state_FSM_FFd6 AND 
+	MainTimer/state_FSM_FFd2 AND NOT MainTimer/state_FSM_FFd3)
+	OR (NOT CarNS AND NOT NSPS AND NOT EWPS AND state_FSM_FFd6));
+
+
+Register Legend:
+ FDCPE (Q,D,C,CLR,PRE,CE); 
+ FDDCPE (Q,D,C,CLR,PRE,CE); 
+ FTCPE (Q,D,C,CLR,PRE,CE); 
+ FTDCPE (Q,D,C,CLR,PRE,CE); 
+ LDCP  (Q,D,G,CLR,PRE); 
+
+******************************  Device Pin Out *****************************
+
+Device : XC2C64A-7-VQ44
+
+
+   --------------------------------  
+  /44 43 42 41 40 39 38 37 36 35 34 \
+ | 1                             33 | 
+ | 2                             32 | 
+ | 3                             31 | 
+ | 4                             30 | 
+ | 5         XC2C64A-7-VQ44      29 | 
+ | 6                             28 | 
+ | 7                             27 | 
+ | 8                             26 | 
+ | 9                             25 | 
+ | 10                            24 | 
+ | 11                            23 | 
+ \ 12 13 14 15 16 17 18 19 20 21 22 /
+   --------------------------------  
+
+
+Pin Signal                         Pin Signal                        
+No. Name                           No. Name                          
+  1 Clock                            23 LEDs<2>                       
+  2 KPR                              24 TDO                           
+  3 KPR                              25 GND                           
+  4 GND                              26 VCCIO-3.3                     
+  5 KPR                              27 KPR                           
+  6 KPR                              28 KPR                           
+  7 VCCIO-3.3                        29 debugLED                      
+  8 KPR                              30 Reset                         
+  9 TDI                              31 KPR                           
+ 10 TMS                              32 KPR                           
+ 11 TCK                              33 KPR                           
+ 12 KPR                              34 CarEW                         
+ 13 KPR                              35 VCCAUX                        
+ 14 KPR                              36 CarNS                         
+ 15 VCC                              37 PedEW                         
+ 16 KPR                              38 PedNS                         
+ 17 GND                              39 LightsEW<1>                   
+ 18 KPR                              40 LightsEW<0>                   
+ 19 KPR                              41 LightsNS<1>                   
+ 20 KPR                              42 LightsNS<0>                   
+ 21 LEDs<0>                          43 KPR                           
+ 22 LEDs<1>                          44 KPR                           
+
+
+Legend :  NC  = Not Connected, unbonded pin
+        PGND  = Unused I/O configured as additional Ground pin
+         KPR  = Unused I/O with weak keeper (leave unconnected)
+         WPU  = Unused I/O with weak pull up (leave unconnected)
+         TIE  = Unused I/O floating -- must tie to VCC, GND or other signal
+         VCC  = Dedicated Power Pin
+      VCCAUX  = Power supply for JTAG pins
+   VCCIO-3.3  = I/O supply voltage for LVTTL, LVCMOS33, SSTL3_I
+   VCCIO-2.5  = I/O supply voltage for LVCMOS25, SSTL2_I
+   VCCIO-1.8  = I/O supply voltage for LVCMOS18
+   VCCIO-1.5  = I/O supply voltage for LVCMOS15, HSTL_I
+        VREF  = Reference voltage for indicated input standard
+       *VREF  = Reference voltage pin selected by software
+         GND  = Dedicated Ground Pin
+         TDI  = Test Data In, JTAG pin
+         TDO  = Test Data Out, JTAG pin
+         TCK  = Test Clock, JTAG pin
+         TMS  = Test Mode Select, JTAG pin
+  PROHIBITED  = User reserved pin
+****************************  Compiler Options  ****************************
+
+Following is a list of all global compiler options used by the fitter run.
+
+Device(s) Specified                         : xc2c64a-7-VQ44
+Optimization Method                         : DENSITY
+Multi-Level Logic Optimization              : ON
+Ignore Timing Specifications                : OFF
+Default Register Power Up Value             : LOW
+Keep User Location Constraints              : ON
+What-You-See-Is-What-You-Get                : OFF
+Exhaustive Fitting                          : OFF
+Keep Unused Inputs                          : OFF
+Slew Rate                                   : FAST
+Set Unused I/O Pin Termination              : KEEPER
+Global Clock Optimization                   : ON
+Global Set/Reset Optimization               : ON
+Global Ouput Enable Optimization            : ON
+Enable Input Registers                      : ON
+Function Block Fan-in Limit                 : 38
+Use DATA_GATE Attribute                     : ON
+Set Tristate Outputs to Termination Mode    : KEEPER
+Default Voltage Standard for All Outputs    : LVCMOS18
+Input Limit                                 : 32
+Pterm Limit                                 : 28

@@ -1,0 +1,4 @@
+vhdl work "PedTimer.vhd"
+vhdl work "PedRegister.vhd"
+vhdl work "MainTimer.vhd"
+vhdl work "Traffic.vhd"
